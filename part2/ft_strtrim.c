@@ -6,11 +6,11 @@
 /*   By: napoleon <napoleon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 18:38:52 by napoleon          #+#    #+#             */
-/*   Updated: 2019/11/19 18:51:32 by napoleon         ###   ########.fr       */
+/*   Updated: 2019/11/21 17:57:36 by napoleon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strchar(char c, char *str)
+int		ft_strchar(const char c, const char *str)
 {
 	int i;
 
