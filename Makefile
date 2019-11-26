@@ -3,53 +3,43 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: napoleon <napoleon@student.42.fr>          +#+  +:+       +#+         #
+#    By: lnelson <lnelson@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 20:55:19 by napoleon          #+#    #+#              #
-#    Updated: 2019/11/21 19:38:21 by napoleon         ###   ########.fr        #
+#    Updated: 2019/11/26 17:51:14 by lnelson          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
+		  ft_memmove.c ft_memchr.c ft_memcmp.c \
+		  ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
+		  ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
+		  ft_strchr.c ft_strrchr.c ft_strncmp.c \
+		  ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_atoi.c \
+		  ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
+		  ft_split.c ft_itoa.c ft_strmapi.c \
+		  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+OBJS	= ${SRC:.c=.o}
+BONUS	= ${SRC:.c=.o} ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
+	ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o \
+	ft_ischarset.o ft_isspace.o ft_putchar.o ft_putnbr.o ft_putstr.o ft_strcat.o \
+	ft_strcmp.o ft_strcpy.o ft_strmap.o ft_strncat.o ft_strncpy.o ft_strnew.o \
 NAME	= libft.a
-
-OBJS	= ${SRCS:.c=.o}
-
-FLAGS	= -Wall -Wextra -Werror
-
-#		1.File manipulation | 2.String manipulation | 3.Memory manipulation | 4.Math + *toa
-
-SRCS	= \
-
-		part2/ft_putchar_fd.c part2/ ft_putstr_fd.c part2/ft_putendl_fd.c part2/ft_putnbr_fd.c \
-		
-		part2/ft_split.c part2/ft_strjoin.c part2/ft_strmapi.c part2/ft_substr.c part2/ft_strtrim.c \
-		part2/ft_substr.c part1/ft_isalpha.c part1/ft_isascii.c part1/ft_isalnum.c part1/ft_isdigit.c \
-		part1/ft_isprint.c part1/ft_strdup.c part1/ft_strchr.c part1/ft_strlcat.c part1/ft_strlcpy.c \
-		part1/ft_strlen.c part1/ft_strncmp.c part1/ft_strnstr.c part1/ft_strrchr.c part1/ft_tolower.c \
-		part1/ft_toupper.c \
-		
-		part1/ft_calloc.c part1/ft_memccpy.c part1/ft_memcpy.c part1/ft_memchr.c part1/ft_memcmp.c \
-		part1/ft_memset.c part1/ft_memmove.c part1/ft_bzero.c \
-		
-		part1/ft_atoi.c part2/ft_itoa.c part1/
-
-
-RM		= rm -fr
-
 CC		= gcc
-
+CFLAGS	= -Wall -Wextra -Werror
+RM		= rm -f
+${NAME}:	libft.h ${OBJS}
+			ar rc ${NAME} ${OBJS}
+			ranlib ${NAME}
+%.o: %.c
+	${CC} -I. -o $@ -c $? ${CFLAGS}
 all:		${NAME}
-
-${NAME}:	${OBJS}
-				ar rc ${NAME} ${OBJS}
-
-clean:		
-				${RM} ${OBJS}
-				
-fclean:		 clean
-				${RM} ${NAME}
-				
+bonus:		libft.h ${BONUS}
+			ar rc ${NAME} ${BONUS}
+			ranlib ${NAME}
+clean:
+			${RM} ${BONUS}
+fclean:		clean
+			${RM} ${NAME}
 re:			fclean all
-
-so:			${OBJS}
-			gcc -shared -o libft.so ${OBJS}
+.PHONY:		all clean fclean re bonus
