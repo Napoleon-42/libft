@@ -6,13 +6,13 @@
 /*   By: lnelson <lnelson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 14:04:34 by lnelson           #+#    #+#             */
-/*   Updated: 2020/02/10 16:46:37 by lnelson          ###   ########.fr       */
+/*   Updated: 2020/02/26 15:03:32 by lnelson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-/**/
+
 static int	ft_count_word(char const *s1, char c)
 {
 	int	comp;
@@ -92,18 +92,18 @@ char		**ft_split(char const *s, char c)
 	return (res);
 }
 /*
-int main()
-{
-	int i = 0;
-	char *test = "salut c'est une pharese de split lol         qqqqqqqqqqqq";
-	char testo;
-	printf("{{%c}}", testo);
-	char **lol = ft_split(test, testo);
-	while (lol[i])
-	{
-		printf("lol[%d] = %s", i, lol[i]);
-		i++;
-	}
-	return (0);
-}
+**int main()
+**{
+**	int i = 0;
+**	char *test = "salut c'est une pharese de split lol         qqqqqqqqqqqq";
+**	char testo;
+**	printf("{{%c}}", testo);
+**	char **lol = ft_split(test, testo);
+**	while (lol[i])
+**	{
+**		printf("lol[%d] = %s", i, lol[i]);
+**		i++;
+**	}
+**	return (0);
+**}
 */
