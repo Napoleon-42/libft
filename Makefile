@@ -6,7 +6,7 @@
 #    By: lnelson <lnelson@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/07 20:55:19 by napoleon          #+#    #+#              #
-#    Updated: 2019/11/29 19:25:06 by lnelson          ###   ########.fr        #
+#    Updated: 2020/02/03 16:40:18 by lnelson          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ clean:
 				${RM} ${OBJS} ${BONUS_OBJS}
 				
 fclean:		 clean
-				${RM} ${NAME} ${BONUS_OBJS}
+				${RM} ${NAME}
 				
 re:			fclean all
 

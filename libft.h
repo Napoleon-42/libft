@@ -6,7 +6,7 @@
 /*   By: lnelson <lnelson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 20:32:19 by lnelson           #+#    #+#             */
-/*   Updated: 2019/11/29 19:32:44 by lnelson          ###   ########.fr       */
+/*   Updated: 2020/02/03 14:53:26 by lnelson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *c);
 char			*ft_strjoin(char const *s1, char const *s2);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size);
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
 int				ft_strlen(const char *s);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strncmp(const char *str1, const char *str2, size_t n);

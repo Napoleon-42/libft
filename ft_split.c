@@ -6,13 +6,13 @@
 /*   By: lnelson <lnelson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 14:04:34 by lnelson           #+#    #+#             */
-/*   Updated: 2019/11/29 20:44:50 by lnelson          ###   ########.fr       */
+/*   Updated: 2020/02/10 16:46:37 by lnelson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
+/**/
 static int	ft_count_word(char const *s1, char c)
 {
 	int	comp;
@@ -49,7 +49,7 @@ static int	ft_size_w(char const *str, int i, char c)
 	return (j);
 }
 
-static char	**ft_free_abort(char **sstr, int nb)
+char		**ft_free_abort(char **sstr, int nb)
 {
 	int i;
 
@@ -70,13 +70,13 @@ char		**ft_split(char const *s, char c)
 	int		j;
 	int		n_word;
 
-	if (!s || !c)
+	if (!s)
 		return (0);
 	i = 0;
 	n_word = 0;
 	if (!(res = malloc(sizeof(char*) * (ft_count_word((char*)s, c) + 1))))
 		return (0);
-	while (n_word != ft_count_word((char*)s, c))
+	while (n_word != ft_count_word((char*)s, c) && s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -91,3 +91,19 @@ char		**ft_split(char const *s, char c)
 	res[n_word] = 0;
 	return (res);
 }
+/*
+int main()
+{
+	int i = 0;
+	char *test = "salut c'est une pharese de split lol         qqqqqqqqqqqq";
+	char testo;
+	printf("{{%c}}", testo);
+	char **lol = ft_split(test, testo);
+	while (lol[i])
+	{
+		printf("lol[%d] = %s", i, lol[i]);
+		i++;
+	}
+	return (0);
+}
+*/

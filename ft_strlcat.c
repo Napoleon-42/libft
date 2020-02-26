@@ -6,7 +6,7 @@
 /*   By: lnelson <lnelson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 20:39:01 by napoleon          #+#    #+#             */
-/*   Updated: 2019/11/29 19:36:08 by lnelson          ###   ########.fr       */
+/*   Updated: 2020/02/03 14:49:38 by lnelson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static unsigned int	ft_strnlen(char *str, unsigned int n)
 	return (i);
 }
 
-unsigned int		ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int		ft_strlcat(char *dest, const char *src, unsigned int size)
 {
 	size_t i;
 	size_t dest_len;
