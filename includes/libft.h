@@ -6,7 +6,7 @@
 /*   By: lnelson <lnelson@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 20:32:19 by lnelson           #+#    #+#             */
-/*   Updated: 2020/02/03 14:53:26 by lnelson          ###   ########.fr       */
+/*   Updated: 2021/01/20 15:00:00 by lnelson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+void			ft_putnchar_fd(char c, int n, int fd);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
+void			ft_putnstr_fd(char *str, int n, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
@@ -37,8 +39,8 @@ char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *c);
 char			*ft_strjoin(char const *s1, char const *s2);
-unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size);
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 int				ft_strlen(const char *s);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strncmp(const char *str1, const char *str2, size_t n);
@@ -65,5 +67,8 @@ t_list			*ft_lstlast(t_list *begin_list);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
 t_list			*ft_lstnew(void *content);
 int				ft_lstsize(t_list *begin_list);
+double			ft_atof(const char *string);
+int				get_next_line(int fd, char **line);
+int				ft_printf(const char *format, ...);
 
 #endif
